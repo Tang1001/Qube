@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<X3D profile="Immersive" version="3.0">
+	<Scene>
+		<Shape>
+			<IndexedFaceSet coordIndex="0 1 2 -1 3 2 1 -1">
+				<Coordinate point="0.000000 0.760000 0.000000, 0.000000 -0.760000 0.000000, 2.560000 0.760000 0.000000, 2.560000 -0.760000 0.000000"/>
+				<TextureCoordinate point="0.020716 0.530451 0.020716 0.209662 0.973635 0.530451 0.973635 0.209662"/>
+			</IndexedFaceSet>
+			<Appearance>
+				<Material diffuseColor="1.0 1.0 1.0"/>
+			</Appearance>
+		</Shape>
+		<Viewpoint description="View Object 0" orientation="1 0 0 0" position="1.280000 0.000000 3.800000"/>
+		<NavigationInfo type="EXAMINE"/>
+	</Scene>
+</X3D>

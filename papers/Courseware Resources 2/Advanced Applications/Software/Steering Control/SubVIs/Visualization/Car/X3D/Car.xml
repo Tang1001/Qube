@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scene xmlns="http://www.quarcservice.com/schemas/visualization_scene_file.xsd" Version="1.3">
+  <SceneParameters>
+    <Mouse>
+      <Forward Button="wheel" Direction="forward" Speed="0.002"/>
+      <Left Button="right" Direction="left" Speed="0.002"/>
+      <Up Button="right" Direction="backward" Speed="0.002"/>
+      <Roll Alt="true" Button="left" Direction="right" Speed="0.002"/>
+      <Pitch Button="left" Direction="forward" Speed="0.002"/>
+      <Yaw Button="left" Direction="left" Speed="0.002"/>
+    </Mouse>
+    <Camera ClipFar="1000" ClipNear="0.1" ViewAngle="20"/>
+    <Light Ambient="0.314 0.314 0.314" Background="0.678 0.922 1"/>
+    <Window DisplayMode="window" FrameRate="30" Height="768" Menu="true" StatusBar="true" Width="1024"/>
+    <Keyboard>
+      <Translation Backward="s" Down="q" Forward="w" PanLeft="a" PanRight="d" Speed="1" Up="e"/>
+    </Keyboard>
+  </SceneParameters>
+  <MeshPool>
+    <Mesh Filename="Car_BodyShiny.x3d" ID="mesh.Car_BodyShiny"/>
+    <Mesh Filename="Car_BodyMatt.x3d" ID="mesh.Car_BodyMatt"/>
+    <Mesh Filename="Car_HubFrontRight.x3d" ID="mesh.Car_HubFrontRight"/>
+    <Mesh Filename="Car_TireFrontRight.x3d" ID="mesh.Car_TireFrontRight"/>
+    <Mesh Filename="Car_HubsBack.x3d" ID="mesh.Car_HubsBack"/>
+    <Mesh Filename="Car_TiresBack.x3d" ID="mesh.Car_TiresBack"/>
+    <Mesh Filename="Car_HubFrontLeft.x3d" ID="mesh.Car_HubFrontLeft"/>
+    <Mesh Filename="Car_TireFrontLeft.x3d" ID="mesh.Car_TireFrontLeft"/>
+    <Mesh Filename="Car_Shadow.x3d" ID="mesh.Car_Shadow"/>
+      </MeshPool>
+  <TexturePool>
+    <Texture Filename="k:\visualizations\uoft\car\texture\orange.png" ID="image_Orange"/>
+    <Texture Filename="k:\visualizations\uoft\car\texture\carshadow.png" ID="image_CarShadow"/>
+  </TexturePool>
+  <ObjectPool>
+    <Object Mesh="mesh.Car_BodyShiny" ID="object.Car_BodyShiny" Texture="image_Orange"/>
+    <Object Mesh="mesh.Car_BodyMatt" ID="object.Car_BodyMatt" Texture="image_Orange"/>
+    <Object Mesh="mesh.Car_HubFrontRight" ID="object.Car_HubFrontRight" Texture="image_Orange"/>
+    <Object Mesh="mesh.Car_TireFrontRight" ID="object.Car_TireFrontRight" Texture="image_Orange"/>
+    <Object Mesh="mesh.Car_HubsBack" ID="object.Car_HubsBack" Texture="image_Orange"/>
+    <Object Mesh="mesh.Car_TiresBack" ID="object.Car_TiresBack" Texture="image_Orange"/>
+    <Object Mesh="mesh.Car_HubFrontLeft" ID="object.Car_HubFrontLeft" Texture="image_Orange"/>
+    <Object Mesh="mesh.Car_TireFrontLeft" ID="object.Car_TireFrontLeft" Texture="image_Orange"/>
+    <Object Mesh="mesh.Car_Shadow" ID="object.Car_Shadow" Texture="image_CarShadow"/>
+      </ObjectPool>
+  <ActorPool>
+    <Actor Color="1 1 1 1" ID="actor.camera" Object="camera" Orientation="0 0 0" Position="-5 0 0" Scale="1 1 1"/>
+    <Actor Object="object.Car_BodyShiny" ID="actor.Car_BodyShiny" Color="1.00 1.00 1.00 1.00" Orientation="0 0 0" Position="0.000000 0.000000 0.000000" Priority="0" Scale="1 1 1">
+      <Actor Object="object.Car_BodyMatt" ID="actor.Car_BodyMatt" Color="1.00 1.00 1.00 1.00" Orientation="0 0 0" Position="1.235037 0.000000 -0.000000" Priority="0" Scale="1 1 1"/>
+      <Actor Object="object.Car_HubFrontRight" ID="actor.Car_HubFrontRight" Color="1.00 1.00 1.00 1.00" Orientation="0 0 0" Position="2.519211 -0.692487 0.301907" Priority="0" Scale="1 1 1">
+        <Actor Object="object.Car_TireFrontRight" ID="actor.Car_TireFrontRight" Color="1.00 1.00 1.00 1.00" Orientation="0 0 0" Position="0.008738 0.690544 0.058298" Priority="0" Scale="1 1 1"/>
+      </Actor>
+      <Actor Object="object.Car_HubsBack" ID="actor.Car_HubsBack" Color="1.00 1.00 1.00 1.00" Orientation="0 0 0" Position="-0.019011 -0.001267 0.303778" Priority="0" Scale="1 1 1">
+        <Actor Object="object.Car_TiresBack" ID="actor.Car_TiresBack" Color="1.00 1.00 1.00 1.00" Orientation="0 0 0" Position="0.002996 -0.000000 0.046718" Priority="0" Scale="1 1 1"/>
+      </Actor>
+      <Actor Object="object.Car_HubFrontLeft" ID="actor.Car_HubFrontLeft" Color="1.00 1.00 1.00 1.00" Orientation="0 0 0" Position="2.519211 0.702464 0.301907" Priority="0" Scale="1 1 1">
+        <Actor Object="object.Car_TireFrontLeft" ID="actor.Car_TireFrontLeft" Color="1.00 1.00 1.00 1.00" Orientation="0 0 0" Position="0.008738 0.690544 0.058298" Priority="0" Scale="1 1 1"/>
+      </Actor>
+      <Actor Object="object.Car_Shadow" ID="actor.Car_Shadow" Color="1.00 1.00 1.00 1.00" Orientation="0 0 0" Position="1.250000 0.000000 0.000000" Priority="0" Scale="1 1 1"/>
+    </Actor>
+    <Actor Object="light" ID="actor.Omni001" Color="1 1 1 1" Orientation="0 0 0" Position="0.000000 0.000000 9.038208" Scale="1 1 1"/>
+  </ActorPool>
+</Scene>

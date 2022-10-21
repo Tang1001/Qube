@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scene xmlns="http://www.quarcservice.com/schemas/visualization_scene_file.xsd" Version="1.3">
+   <SceneParameters>
+      <Mouse>
+         <Forward Button="wheel" Direction="forward" Speed="0.002"/>
+         <Left Button="right" Direction="left" Speed="0.002"/>
+         <Up Button="right" Direction="backward" Speed="0.002"/>
+         <Roll Alt="true" Button="left" Direction="right" Speed="0.002"/>
+         <Pitch Button="left" Direction="forward" Speed="0.002"/>
+         <Yaw Button="left" Direction="left" Speed="0.002"/>
+      </Mouse>
+      <Window DisplayMode="window" FrameRate="30" Height="768" Menu="true" StatusBar="true" Width="1024"/>
+      <Camera ClipFar="5000" ClipNear="1" ViewAngle="45"/>
+      <Light Ambient="0.314 0.314 0.314" Background="0.678 0.922 1"/>
+      <Fog Color="1 1 1" Density="0.5" End="10.0" Mode="none" Start="5.0"/>
+      <Keyboard>
+         <Translation Backward="s" Down="q" Forward="w" PanLeft="a" PanRight="d" Speed="10" Up="e"/>
+         <Rotation PitchDown="k" PitchUp="i" RollLeft="j" RollRight="l" Speed="1.5707963267948966" YawLeft="u" YawRight="o"/>
+      </Keyboard>
+   </SceneParameters>
+   <MeshPool>
+      <Mesh Filename="terrain.x3d" ID="mesh.terrain"/>
+      <Mesh Filename="road.x3d" ID="mesh.road"/>
+      <Mesh Filename="box.x3d" ID="mesh.box"/>
+      <Mesh Filename="arrows.x3d" ID="mesh.arrows"/>
+   </MeshPool>
+   <TexturePool>
+      <Texture Filename="Road.jpg" ID="image.Road"/>
+      <Texture Filename="palette.png" ID="image.palette"/>
+   </TexturePool>
+   <ObjectPool>
+      <Object ID="object.terrain" Mesh="mesh.terrain"/>
+      <Object ID="object.road" Mesh="mesh.road" Texture="image.Road"/>
+      <Object ID="object.box" Mesh="mesh.box"/>
+      <Object ID="object.arrows" Mesh="mesh.arrows" Texture="image.palette"/>
+   </ObjectPool>
+   <ActorPool>
+      <Actor Color="1 1 1 1" Emissive="0" ID="actor.light" Object="light" Orientation="0 0 0" Position="-10250.8 -20487.2 32955.1" Scale="1 1 1" Specular="0 0 0 0"/>
+      <Actor Color="0 0.498 0 1" Emissive="0" Fog="true" ID="actor.terrain" Object="object.terrain" Orientation="0 0 0" Position="0 0 0" Priority="-1" Scale="1 1 1" Specular="0 0 0 0"/>
+      <Actor Color="1 1 1 1" Emissive="0" Fog="true" ID="actor.road" Object="object.road" Orientation="0 0 0" Position="0 0 0.5" Priority="0" Scale="1 1 1" Specular="0 0 0 0"/>
+      <Actor Color="1 1 1 1" Emissive="0" ID="actor.box" Object="object.box" Orientation="0 0 0" Position="0 0 0" Scale="1 1 1" Specular="0 0 0 0">
+         <Actor Color="1 1 1 1" Emissive="0" Fog="true" ID="actor.camera" Object="camera" Orientation="0 0.219961 0" Position="-14.483 0 6.13973" Priority="0" Scale="1 1 1" Specular="0 0 0 0">
+            <Actor Color="1 1 1 1" Emissive="0" Fog="true" ID="actor.dummy" Object="dummy" Orientation="0 0 0" Position="5.39327 2.42307 1.57584" Priority="0" Scale="1 1 1" Specular="0 0 0 0.1">
+               <Actor Color="1 1 1 1" Emissive="0" Fog="true" ID="actor.arrows" InheritOrientation="false" Object="object.arrows" Orientation="0 0 0" Position="0 0 0" Priority="0" Scale="0.5 0.5 0.5" Specular="0 0 0 0.1"/>
+            </Actor>
+         </Actor>
+      </Actor>
+   </ActorPool>
+</Scene>
